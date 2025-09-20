@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+
+    --font-geist: "Geist", "Sans-serif";
+
+    --color-light-bg: #FFFFFF;
+    --color-light-card: #FAF9F6;
+    --color-light-border: #191919;
+    --color-light-button: #E5E5E5;
+    --color-light-font: #191919;
+
+    --color-dark-bg: #101010;
+    --color-dark-card: #191919;
+    --color-dark-border: #F2F2F2;
+    --color-dark-button: #121212;
+    --color-dark-font: #FAF9F6;
+
+    --animate-fade-in: fade-in 0.7s ease-out;
+
+    @keyframes fade-in {
+        0% {
+        opacity: 0;
+        transform: translateX(-8px);
+        }
+        100% {
+        opacity: 1;
+        transform: translateX(0);
+        }
+    }
+}
+
+.tooltip:before {
+    @apply font-geist text-xs bg-dark-bg;
+}
+
+.tooltip:after {
+    @apply bg-dark-bg;
+}
