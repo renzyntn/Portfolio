@@ -7,7 +7,7 @@ import Services from "./components/Services";
 import Education from "./components/Education";
 import Techstack from "./components/Techstack";
 import Copyright from "./components/Copyright";
-import profilePic from "./assets/images/images-profile.jpg";
+import profilePic from "./assets/images/images-profile.JPG";
 
 function App() {
 
