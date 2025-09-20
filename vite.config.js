@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwind(),
   ],
-  base: 'https://github.com/renzyntn/portfolio.github.io',
+  base: '/portfolio.github.io/',
 })
