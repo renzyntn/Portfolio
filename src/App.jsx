@@ -123,18 +123,12 @@ function App() {
               },
               {
                 id: 2,
-                title: "Anisho",
-                description: "Streaming website landing page",
-                link: "https://anisho.netlify.app/",
-              },
-              {
-                id: 3,
                 title: "Weather App",
                 description: "Real-time info via API",
                 link: "https://weatherweb-prsnl.netlify.app/",
               },
               {
-                id: 4,
+                id: 3,
                 title: "Password Generator",
                 description: "Guaranteed complex generated",
                 link: "https://passgenerator-tailwind.netlify.app/",
