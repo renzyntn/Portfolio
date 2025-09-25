@@ -13,8 +13,10 @@ function App() {
 
   //About Component
   const [theme, setTheme] = useState(() => {                //Set website theme based on the theme state boolean value
-    const checkPastTheme = localStorage.getItem('theme');     //Get localStorage key value to determine theme
-    return checkPastTheme ? JSON.parse(checkPastTheme) : false;
+    const checkPastTheme = localStorage.getItem('theme');   //Get localStorage key value to determine theme
+    return checkPastTheme 
+      ? JSON.parse(checkPastTheme)                          //If true, set the theme saved from localStorage
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;  // If false, then set the theme depending on OS theme
   });
 
   function toggleTheme() {
