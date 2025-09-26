@@ -8,6 +8,7 @@ import Education from "./components/Education";
 import Techstack from "./components/Techstack";
 import Copyright from "./components/Copyright";
 import profilePic from "./assets/images/image-profile.png";
+import profilePicDark from "./assets/images/image-profile-dark.png";
 
 function App() {
 
@@ -35,7 +36,7 @@ function App() {
       <section className="h-full w-auto max-w-[57rem] grid grid-cols-1 md:grid-cols-6 justify-center items-center px-3 py-8 sm:p-8 gap-2 md:gap-1 overflow-auto">
         <div className="md:col-span-2 md:col-start-1 md:row-span-2 md:row-start-1 md:row-end-3">
           <Profile
-            img={profilePic}
+            img={theme ? profilePicDark : profilePic}
             alt={"Renzy Antonio - Frontend Developer"}
             name={"Renzy Antonio"}
             jobtitle={"Frontend Developer"}
