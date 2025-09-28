@@ -47,7 +47,7 @@ function Education(props) {
                         Junior High School
                     </h3>
                     <h4 className="text-xs italic pb-2 md:pb-0">
-                        Iba National Highschool
+                        Iba National High School
                     </h4>
                     <span className="md:absolute top-0 right-0 w-fit flex justify-center items-center p-1.5 border-light-border/15 dark:border-dark-border/20 border-1 rounded-md">
                         <p className="text-xs font-normal">
