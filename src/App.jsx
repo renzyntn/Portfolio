@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Profile from "./components/Profile";
 import About from "./components/About";
 import Socials from "./components/Socials";
@@ -27,6 +27,14 @@ function App() {
       return setNewTheme;
     })
   }
+
+  useEffect(() => {
+    const imgLightBg = new Image();
+    const imgDarkBg = new Image();
+
+    imgLightBg.src = profilePic;
+    imgDarkBg.src = profilePicDark;
+  }, [])
 
   //Copyright Component
   let currentYear = new Date().getFullYear(); //Get latest year to display in copyright paragraph
