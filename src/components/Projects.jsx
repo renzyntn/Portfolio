@@ -30,14 +30,14 @@ function Projects(props) {
                         {props.section}
                     </h2>
                 </div>
-                {/*<button className="h-6 flex justify-center items-center">
+                <button onClick={props.toggleProjectsModal} className="h-6 flex justify-center items-center cursor-pointer">
                     <span className="flex items-center gap-1">
                         <p className="text-xs font-normal">View All</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width={"20"} height={"20"} viewBox="0 0 24 24">
                             <path fill={"none"} stroke={"currentColor"} strokeLinecap={"round"} strokeLinejoin={"round"} d="m10 17l5-5l-5-5" strokeWidth={"1"} />
                         </svg>
                     </span>
-                </button>*/}
+                </button>
             </header>
 
             <div className="w-full h-auto grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-3 md:gap-2">

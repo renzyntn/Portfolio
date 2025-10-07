@@ -18,7 +18,7 @@ function About(props) {
             </header>
 
             <div className="w-auto md:max-w-[32.5rem] h-auto md:max-h-[14.7rem]">
-                <p className="text-base text-start font-normal md:pb-0.5 md:leading-relaxed whitespace-pre-line">
+                <p className="text-base text-start font-normal md:pb-0.5 md:leading-relaxed md:line-clamp-9 whitespace-pre-line">
                     {props.par}
                 </p>
             </div>

@@ -3,6 +3,7 @@ import Profile from "./components/Profile";
 import About from "./components/About";
 import Socials from "./components/Socials";
 import Projects from "./components/Projects";
+import ProjectsModal from "./components/ProjectsModal";
 import Services from "./components/Services";
 import Education from "./components/Education";
 import Techstack from "./components/Techstack";
@@ -26,6 +27,13 @@ function App() {
       localStorage.setItem('theme', JSON.stringify(setNewTheme));
       return setNewTheme;
     })
+  }
+
+  //Project Modal Component
+  const [showProjectsModal, setShowProjectModal] = useState(false); //State for ProjectsModal Component
+
+  function toggleProjectsModal() {
+    setShowProjectModal(prevProjectModal => !prevProjectModal);
   }
 
   useEffect(() => {
@@ -125,6 +133,7 @@ function App() {
         <div className="md:col-span-4 md:col-start-1 md:row-span-2 md:row-start-3 md:row-end-5">
           <Projects
             section={"Projects"}
+            toggleProjectsModal={toggleProjectsModal}
             projects={[
               {
                 id: 1,
@@ -232,6 +241,7 @@ function App() {
           />
         </div>
       </section>
+      {showProjectsModal && <ProjectsModal showProjectsModal={showProjectsModal} toggleProjectsModal={toggleProjectsModal}/>}
     </main>
   );
 }
