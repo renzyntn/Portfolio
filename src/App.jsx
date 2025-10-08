@@ -13,6 +13,15 @@ import profilePicDark from "./assets/images/image-profile-dark.png";
 
 function App() {
 
+  //Profile Component
+  useEffect(() => {
+    const imgLightBg = new Image();
+    const imgDarkBg = new Image();
+
+    imgLightBg.src = profilePic;
+    imgDarkBg.src = profilePicDark;
+  }, [])
+
   //About Component
   const [theme, setTheme] = useState(() => {                //Set website theme based on the theme state boolean value
     const checkPastTheme = localStorage.getItem('theme');   //Get localStorage key value to determine theme
@@ -37,12 +46,16 @@ function App() {
   }
 
   useEffect(() => {
-    const imgLightBg = new Image();
-    const imgDarkBg = new Image();
+    if (showProjectsModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
 
-    imgLightBg.src = profilePic;
-    imgDarkBg.src = profilePicDark;
-  }, [])
+    return () => {
+      document.body.style.overflow = 'unset';
+    }
+  }, [showProjectsModal])
 
   //Copyright Component
   let currentYear = new Date().getFullYear(); //Get latest year to display in copyright paragraph
@@ -161,11 +174,6 @@ function App() {
             section={"Services"} 
           />
         </div>
-        <div className="md:col-span-3 md:col-start-1 md:row-span-2 md:row-start-5 md:row-end-6">
-          <Education 
-            section={"Education"} 
-          />
-        </div>
         <div className="md:col-span-3 md:col-start-4 md:row-span-2 md:row-start-5">
           <Techstack
             section={"Techstack & Tools"}
@@ -233,6 +241,11 @@ function App() {
                 svgPath: `M0 9.781v10.667h8.885v1.771H16v-1.771h16V9.781zm8.885 8.88H7.114v-5.333H5.333v5.333H1.781v-7.104h7.104zm5.334 0v1.787h-3.552v-8.891h7.115v7.109h-3.563zm16.005 0h-1.776v-5.333h-1.781v5.333h-1.781v-5.333h-1.771v5.333h-3.563v-7.104h10.672zm-16.005-5.328H16v3.557h-1.781z`,
               },
             ]}
+          />
+        </div>
+        <div className="md:col-span-3 md:col-start-1 md:row-span-2 md:row-start-5 md:row-end-6">
+          <Education 
+            section={"Education"} 
           />
         </div>
         <div className="md:col-span-3 md:col-start-1 md:row-span-1 md:row-start-6">
