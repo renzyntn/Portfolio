@@ -1,0 +1,33 @@
+{
+    "allprojects": {
+        "project": [
+            {
+                "id": 1,
+                "title": "Portfolio",
+                "description": "A bento style portfolio project to showcase my personal works. It taught me about flex grid, positioning and my first project made with framework/library and UI library.",
+                "techstack": ["ReactJS", "Tailwind", "DaisyUI"],
+                "link": "https://renzyntn.is-a.dev/",
+                "image": "./src/assets/project-images/project-image-1.png",
+                "alt": "Portfolio project image"
+            },
+            {
+                "id": 2,
+                "title": "Weather App",
+                "description": "Real-time weather app via openWeather API that provides weather information. It taught me about REST API, data request, and displaying response data on my app.",
+                "techstack": ["JavaScript", "HTML", "Tailwind", "RESTful API"],
+                "link": "https://weatherweb-prsnl.netlify.app/",
+                "image": "./src/assets/project-images/project-image-2.png",
+                "alt": "Weather app project image"
+            },
+            {
+                "id": 3,
+                "title": "Password Generator",
+                "description": "Password generator that gives set of mixed characters, numbers, and symbols as result. It taught me about loops, math objects, functions, and theme styling based on preference.",
+                "techstack": ["JavaScript", "HTML", "Tailwind"],
+                "link": "https://passgenerator-tailwind.netlify.app/",
+                "image": "./src/assets/project-images/project-image-3.png",
+                "alt": "Password generator project image"
+            }
+        ]
+    }
+}
