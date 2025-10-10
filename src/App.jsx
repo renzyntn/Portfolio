@@ -14,6 +14,7 @@ import profilePicDark from "./assets/images/image-profile-dark.png";
 function App() {
 
   //Profile Component
+  //Apply useEffect to render images on first mount to prevent re-render when setting new image on new theme
   useEffect(() => {
     const imgLightBg = new Image();
     const imgDarkBg = new Image();
@@ -45,7 +46,7 @@ function App() {
     setShowProjectModal(prevProjectModal => !prevProjectModal);
   }
 
-  useEffect(() => {
+  useEffect(() => {                             //Apply useEffect to hide body scroller when Project Modal Component is showing
     if (showProjectsModal) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -254,7 +255,13 @@ function App() {
           />
         </div>
       </section>
-      {showProjectsModal && <ProjectsModal showProjectsModal={showProjectsModal} toggleProjectsModal={toggleProjectsModal}/>}
+      {showProjectsModal &&
+        <ProjectsModal 
+          showProjectsModal={showProjectsModal}
+          toggleProjectsModal={toggleProjectsModal}
+          copyrightNote={`© ${currentYear} Renzy Antonio, All rights reserved.`}
+        />
+      }
     </main>
   );
 }
