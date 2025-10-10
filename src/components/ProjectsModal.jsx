@@ -1,8 +1,42 @@
+import projectsData from "../projectsdata.json";
 
 function ProjectsModal(props) {
+
+    const projectCard = projectsData.allprojects.project.map((project) => {
+        return (
+            <article className="card w-full md:min-h-[480px] flex flex-col justify-center items-center border-2 bg-light-bg border-light-border/15 dark:bg-dark-card dark:border-dark-border/15 animate-fade-in" key={project.id}>
+                <figure className="w-full h-full">
+                    <img className="w-full h-full object-cover" src={project.image} alt={project.alt}/>
+                </figure>
+                <div className="w-full flex flex-col justify-center items-start p-4 space-y-3 grow">
+                    <h2 className="text-2xl font-bold">
+                        {project.title}
+                    </h2>
+                    <div className="w-full flex flex-wrap justify-start items-center gap-1.5">
+                        {project.techstack.map((language, i) => {
+                            return(
+                                <div className="badge badge-sm lg:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none" key={i}>
+                                    {language}
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <p className="text-base font-normal">
+                        {project.description}
+                    </p>
+                    <a className="w-20 h-10 flex justify-center items-center rounded-md cursor-pointer bg-light-button dark:bg-dark-button hover:bg-dark-button/15 dark:hover:bg-light-button/10" href={project.link} target={"_blank"}>
+                        <span className="text-sm font-normal">
+                            View
+                        </span>
+                    </a>
+                </div>
+            </article>
+        )
+    })
+    
     return(
         <section className="fixed inset-0 z-999 max-w-full flex min-h-screen justify-center items-center mx-auto bg-light-bg dark:bg-dark-bg">
-            <div className="max-w-full h-full flex flex-col justify-between items-center pt-8 px-8 md:px-10 lg:px-20 font-geist text-light-font dark:text-dark-font/80 overflow-auto">
+            <div className="max-w-full h-full flex flex-col justify-between items-center pt-8 px-8 md:px-10 xl:px-20 font-geist text-light-font dark:text-dark-font/80 overflow-auto">
                 <header className="w-full flex gap-4 items-center mb-8">
                     <button onClick={props.toggleProjectsModal}>
                         <span className="flex items-center gap-1 cursor-pointer">
@@ -17,108 +51,14 @@ function ProjectsModal(props) {
                     </h2>
                 </header>
                 
-                <div className="max-w-full h-auto grid grid-cols-1 md:grid-cols-2 justify-center items-center lg:px-15 lg:py-8 xl:px-40 gap-3 md:gap-6">
-                    <div className="card w-full flex flex-col justify-center items-center border-2 bg-light-bg border-light-border/15 dark:bg-dark-card dark:border-dark-border/15 animate-fade-in">
-                        <figure className="w-full h-full">
-                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"/>
-                        </figure>
-
-                        <div className="w-full flex flex-col justify-center items-start px-4 py-6 space-y-3">
-                            <h2 className="text-2xl font-bold">
-                                Portfolio
-                            </h2>
-                            <div className="w-full flex flex-wrap justify-start items-center gap-1.5">
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">React</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Tailwind</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Daisy UI</div>
-                            </div>
-                            <p className="text-base font-normal">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique voluptatibus tempore vero iusto excepturi ad qui, magni voluptatem animi consequatur corporis aut consectetur voluptatum earum consequuntur non ullam eligendi.
-                            </p>
-                            <a className="w-20 h-10 flex justify-center items-center rounded-md cursor-pointer bg-light-button dark:bg-dark-button">
-                                <span className="text-sm font-normal">
-                                    View
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="card w-full flex flex-col justify-center items-center border-2 bg-light-bg border-light-border/15 dark:bg-dark-card dark:border-dark-border/15 animate-fade-in">
-                        <figure>
-                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"/>
-                        </figure>
-
-                        <div className="w-full flex flex-col justify-center items-start px-4 py-6 space-y-3">
-                            <h2 className="text-2xl font-bold">
-                                Portfolio
-                            </h2>
-                            <div className="w-full flex flex-wrap justify-start items-center gap-1.5">
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">React</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Tailwind</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Daisy UI</div>
-                            </div>
-                            <p className="text-base font-normal">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique voluptatibus tempore vero iusto excepturi ad qui, magni voluptatem animi consequatur corporis aut consectetur voluptatum earum consequuntur non ullam eligendi.
-                            </p>
-                            <a className="w-20 h-10 flex justify-center items-center rounded-md cursor-pointer bg-light-button dark:bg-dark-button">
-                                <span className="text-sm font-normal">
-                                    View
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="card w-full flex flex-col justify-center items-center border-2 bg-light-bg border-light-border/15 dark:bg-dark-card dark:border-dark-border/15 animate-fade-in">
-                        <figure>
-                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"/>
-                        </figure>
-
-                        <div className="w-full flex flex-col justify-center items-start px-4 py-6 space-y-3">
-                            <h2 className="text-2xl font-bold">
-                                Portfolio
-                            </h2>
-                            <div className="w-full flex flex-wrap justify-start items-center gap-1.5">
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">React</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Tailwind</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Daisy UI</div>
-                            </div>
-                            <p className="text-base font-normal">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique voluptatibus tempore vero iusto excepturi ad qui, magni voluptatem animi consequatur corporis aut consectetur voluptatum earum consequuntur non ullam eligendi.
-                            </p>
-                            <a className="w-20 h-10 flex justify-center items-center rounded-md cursor-pointer bg-light-button dark:bg-dark-button">
-                                <span className="text-sm font-normal">
-                                    View
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="card w-full flex flex-col justify-center items-center border-2 bg-light-bg border-light-border/15 dark:bg-dark-card dark:border-dark-border/15 animate-fade-in">
-                        <figure>
-                            <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"/>
-                        </figure>
-
-                        <div className="w-full flex flex-col justify-center items-start px-4 py-6 space-y-3">
-                            <h2 className="text-2xl font-bold">
-                                Portfolio
-                            </h2>
-                            <div className="w-full flex flex-wrap justify-start items-center gap-1.5">
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">React</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Tailwind</div>
-                                <div className="badge badge-sm sm:badge-md text-light-font dark:text-dark-font/80 bg-light-button dark:bg-dark-button rounded-full border-none">Daisy UI</div>
-                            </div>
-                            <p className="text-base font-normal">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse similique voluptatibus tempore vero iusto excepturi ad qui, magni voluptatem animi consequatur corporis aut consectetur voluptatum earum consequuntur non ullam eligendi.
-                            </p>
-                            <a className="w-20 h-10 flex justify-center items-center rounded-md cursor-pointer bg-light-button dark:bg-dark-button">
-                                <span className="text-sm font-normal">
-                                    View
-                                </span>
-                            </a>
-                        </div>
-                    </div>
+                <div className="max-w-full h-auto grid grid-cols-1 md:grid-cols-2 justify-center items-center lg:px-15 lg:py-8 xl:px-40 gap-6">
+                    {projectCard}
                 </div>
+
                 <footer className="w-full max-w-screen py-6 text-center mt-8 border-t border-light-border/30 dark:border-dark-border/30">
                     <div className="flex justify-center items-center">
                         <p className="text-sm font-normal">
-                            © 2025 Renzy Antonio, All rights reserved.
+                            {props.copyrightNote}
                         </p>
                     </div>
                 </footer>
