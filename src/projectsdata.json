@@ -8,7 +8,7 @@
                 "techstack": ["ReactJS", "Tailwind", "DaisyUI"],
                 "link": "https://renzyntn.is-a.dev/",
                 "image": "./src/assets/project-images/project-image-1.png",
-                "alt": "Portfolio project image"
+                "alt": "Portfolio project image" 
             },
             {
                 "id": 2,
