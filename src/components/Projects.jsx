@@ -1,14 +1,19 @@
+import projectsData from "../projectsdata.json"
+
 function Projects(props) {
 
+    // Create a copy of array from projectsData.json and get the first 4 index (slice), then reverse it to show the latest added project first
+    const recentProjects = projectsData.allprojects.slice(0, 4).reverse();
+
     //Map over the projects props Object
-    const projList = props.projects.map((project) => {
+    const projList = recentProjects.map((project) => {
         return(
             <article className="flex flex-col justify-center items-start p-1.5 md:p-2 space-y-1 border-light-border/20 dark:border-dark-border/20 border-1 rounded-md transform hover:-translate-y-1 transition duration-300 ease-in-out" key={project.id}>
                 <h3 className="text-base font-medium">
                     {project.title}
                 </h3>
                 <p className="text-xs font-normal">
-                    {project.description}
+                    {project.shortdescription}
                 </p>
                 <a className="w-full md:w-15 h-7 md:h-6 flex justify-center items-center py-1 bg-light-button dark:bg-dark-button dark:text-dark-font/80 rounded-sm" href={project.link} target={"_blank"}>
                     <span className="text-[0.5rem] font-semibold">
