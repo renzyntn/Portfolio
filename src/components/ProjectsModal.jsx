@@ -2,7 +2,10 @@ import projectsData from "../projectsdata.json";
 
 function ProjectsModal(props) {
 
-    const projectCard = projectsData.allprojects.project.map((project) => {
+    // Create a copy of array from projectsData.json (slice), then reverse it to show the latest added project first
+    const allProjects = projectsData.allprojects.slice().reverse();
+
+    const projectCard = allProjects.map((project) => {
         return (
             <article className="card w-full md:min-h-[480px] flex flex-col justify-center items-center border-2 bg-light-bg border-light-border/15 dark:bg-dark-card dark:border-dark-border/15 animate-fade-in" key={project.id}>
                 <figure className="w-full h-full">
