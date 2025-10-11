@@ -148,26 +148,6 @@ function App() {
           <Projects
             section={"Projects"}
             toggleProjectsModal={toggleProjectsModal}
-            projects={[
-              {
-                id: 1,
-                title: "Portfolio",
-                description: "Personal portfolio website",
-                link: "",
-              },
-              {
-                id: 2,
-                title: "Weather App",
-                description: "Real-time info via API",
-                link: "https://weatherweb-prsnl.netlify.app/",
-              },
-              {
-                id: 3,
-                title: "Password Generator",
-                description: "Guaranteed complex generated",
-                link: "https://passgenerator-tailwind.netlify.app/",
-              },
-            ]}
           />
         </div>
         <div className="md:col-span-2 md:col-start-5 md:row-span-2 md:row-start-3 md:row-end-5">
