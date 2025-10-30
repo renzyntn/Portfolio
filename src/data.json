@@ -33,7 +33,7 @@
             "shortdescription": "Guaranteed complex generated",
             "techstack": ["JavaScript", "HTML", "Tailwind"],
             "link": "https://passgenerator-tailwind.netlify.app/",
-            "image": "./src/assets/project-images/project-image-3.PNG",
+            "image": "./src/assets/project-images/project-image-3.png",
             "alt": "Password generator project image"
         },
         {
@@ -43,7 +43,7 @@
             "shortdescription": "Real-time info via API",
             "techstack": ["JavaScript", "HTML", "Tailwind", "RESTful API"],
             "link": "https://weatherweb-prsnl.netlify.app/",
-            "image": "./src/assets/project-images/project-image-2.PNG",
+            "image": "./src/assets/project-images/project-image-2.png",
             "alt": "Weather app project image"
         },
         {
@@ -53,7 +53,7 @@
             "shortdescription": "Personal portfolio website",
             "techstack": ["React.js", "Tailwind", "DaisyUI"],
             "link": "https://renzyntn.is-a.dev/",
-            "image": "./src/assets/project-images/project-image-1.PNG",
+            "image": "./src/assets/project-images/project-image-1.png",
             "alt": "Portfolio project image"
         }
     ],
