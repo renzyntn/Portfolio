@@ -1,4 +1,4 @@
-import projectsData from "../projectsdata.json"
+import projectsData from "../data.json"
 
 function Projects(props) {
 
