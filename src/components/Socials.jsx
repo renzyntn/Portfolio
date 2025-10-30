@@ -1,7 +1,9 @@
-function Socials(props) {
+import socialsData from "../data.json";
+
+function Socials() {
 
     //Map over the props titleLink Object
-    const socialAndLink = props.titleLink.map((social) => {
+    const socialAndLink = socialsData.socials.map((social) => {
         return(
             <a className="w-auto h-auto flex flex-col justify-center items-center gap-0.5" key={social.id} href={social.link} target={"_blank"} aria-label={`Visit ${social.title} profile`}>
                 <svg xmlns="http://www.w3.org/2000/svg" width={"26"} height={"26"} viewBox="0 0 24 24">

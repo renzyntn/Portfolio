@@ -1,7 +1,9 @@
+import techstackData from "../data.json";
+
 function Techstack(props) {
 
     //Map over the props techStack Object
-    const techStackTools = props.techStack.map((stack) => {
+    const techStackTools = techstackData.techstack.map((stack) => {
         return(
             <div className="flex justify-start items-center gap-2" key={stack.id}>
                 <svg xmlns="http://www.w3.org/2000/svg" width={"32"} height={"32"} viewBox="0 0 32 32">
