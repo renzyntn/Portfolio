@@ -47,7 +47,7 @@
       "shortdescription": "Guaranteed complex generated.",
       "techstack": ["JavaScript", "HTML", "Tailwind"],
       "link": "https://passgenerator-tailwind.netlify.app/",
-      "image": "./src/assets/project-images/project-image-3.png",
+      "image": "/project-images/project-image-3.png",
       "alt": "Password generator project image"
     },
     {
@@ -57,7 +57,7 @@
       "shortdescription": "Real-time info via API.",
       "techstack": ["JavaScript", "HTML", "Tailwind", "RESTful API"],
       "link": "https://weatherweb-prsnl.netlify.app/",
-      "image": "./src/assets/project-images/project-image-2.png",
+      "image": "/project-images/project-image-2.png",
       "alt": "Weather app project image"
     },
     {
@@ -67,7 +67,7 @@
       "shortdescription": "Personal portfolio website.",
       "techstack": ["React", "TypeScript", "Tailwind", "DaisyUI"],
       "link": "https://renzyntn.is-a.dev/",
-      "image": "./src/assets/project-images/project-image-1.png",
+      "image": "/project-images/project-image-1.png",
       "alt": "Portfolio project image"
     },
     {
@@ -77,7 +77,7 @@
       "shortdescription": "Unlock your knowledge.",
       "techstack": ["React", "TypeScript", "Tailwind", "RESTful API"],
       "link": "https://quizzicalgame-app.netlify.app/",
-      "image": "./src/assets/project-images/project-image-4.png",
+      "image": "/project-images/project-image-4.png",
       "alt": "Quizzical project image"
     },
     {
@@ -87,7 +87,7 @@
       "shortdescription": "A fast-paced, dice game.",
       "techstack": ["React", "TypeScript", "Tailwind"],
       "link": "https://tenzi-gameapp.netlify.app/",
-      "image": "./src/assets/project-images/project-image-5.png",
+      "image": "/project-images/project-image-5.png",
       "alt": "Tenzies project image"
     }
   ],
