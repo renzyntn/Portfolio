@@ -1,6 +1,7 @@
 import projectsData from "../data.json";
+import type { ProjectsProp } from "../types/proptypes";
 
-function Projects({ section, toggleProjectsModal }) {
+function Projects({ section, toggleProjectsModal }: ProjectsProp) {
   // Create a copy of array from projectsData.json and get the last 4 index (slice), then reverse it to show the latest added project first
   const recentProjects = projectsData.allprojects.slice(-4).reverse();
 

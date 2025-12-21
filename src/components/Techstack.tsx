@@ -1,6 +1,7 @@
 import techstackData from "../data.json";
+import type { TechstackProp } from "../types/proptypes";
 
-function Techstack({ section }) {
+function Techstack({ section }: TechstackProp) {
   //Map over the props techStack Object
   const techStackTools = techstackData.techstack.map((stack) => {
     return (

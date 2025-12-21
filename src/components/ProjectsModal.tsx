@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import projectsData from "../data.json";
+import type { ProjectsModalProp } from "../types/proptypes";
 
-function ProjectsModal({ toggleProjectsModal, copyrightNote }) {
+function ProjectsModal({
+  toggleProjectsModal,
+  copyrightNote,
+}: ProjectsModalProp) {
   // Create a copy of array from projectsData.json (slice), then reverse it to show the latest added project first
   const allProjects = projectsData.allprojects.slice().reverse();
 
