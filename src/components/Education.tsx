@@ -1,4 +1,6 @@
-function Education({ section }) {
+import type { EducationProp } from "../types/proptypes";
+
+function Education({ section }: EducationProp) {
   return (
     <div className="max-w-2xs md:max-w-full h-auto flex flex-col justify-center items-center space-y-3 md:space-y-2 p-4 bg-light-bg border-light-border/15 text-light-font border-2 rounded-lg font-geist dark:bg-dark-card dark:border-dark-border/15 dark:text-dark-font/80 animate-fade-in">
       <header className="w-full flex justify-between items-center">

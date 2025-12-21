@@ -13,7 +13,7 @@ import profilePicDark from "./assets/images/image-profile-dark.png";
 
 function App() {
   //About Component
-  const [theme, setTheme] = useState(() => {
+  const [theme, setTheme] = useState<boolean>(() => {
     //Set website theme based on the theme state boolean value
     const checkPastTheme = localStorage.getItem("theme"); //Get localStorage key value to determine theme
     return checkPastTheme
