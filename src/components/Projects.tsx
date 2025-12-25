@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import projectsData from "../data.json";
 import type { ProjectsProp } from "../types/proptypes";
 
-function Projects({ section, toggleProjectsModal }: ProjectsProp) {
+function Projects({ section }: ProjectsProp) {
   // Create a copy of array from projectsData.json and get the last 4 index (slice), then reverse it to show the latest added project first
   const recentProjects = projectsData.allprojects.slice(-4).reverse();
 
@@ -45,8 +46,8 @@ function Projects({ section, toggleProjectsModal }: ProjectsProp) {
           </svg>
           <h2 className="text-2xl font-bold">{section}</h2>
         </div>
-        <button
-          onClick={toggleProjectsModal}
+        <Link
+          to={"/projects"}
           className="h-6 flex justify-center items-center cursor-pointer"
         >
           <span className="flex items-center gap-1">
@@ -67,7 +68,7 @@ function Projects({ section, toggleProjectsModal }: ProjectsProp) {
               />
             </svg>
           </span>
-        </button>
+        </Link>
       </header>
 
       <div className="w-full h-auto grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-3 md:gap-2">
