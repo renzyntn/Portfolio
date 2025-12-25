@@ -1,11 +1,9 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import projectsData from "../data.json";
 import type { ProjectsModalProp } from "../types/proptypes";
 
-function ProjectsModal({
-  toggleProjectsModal,
-  copyrightNote,
-}: ProjectsModalProp) {
+function ProjectsModal({ theme, copyrightNote }: ProjectsModalProp) {
   // Create a copy of array from projectsData.json (slice), then reverse it to show the latest added project first
   const allProjects = projectsData.allprojects.slice().reverse();
 
@@ -59,10 +57,14 @@ function ProjectsModal({
   });
 
   return (
-    <section className="fixed inset-0 z-999 max-w-full flex min-h-screen justify-center items-center mx-auto bg-light-bg dark:bg-dark-bg">
+    <section
+      className={`${
+        theme ? "dark" : ""
+      } fixed inset-0 z-999 max-w-full flex min-h-screen justify-center items-center mx-auto bg-light-bg dark:bg-dark-bg`}
+    >
       <div className="max-w-full h-full flex flex-col justify-between items-center pt-8 px-8 md:px-10 xl:px-20 font-geist text-light-font dark:text-dark-font/80 overflow-auto">
         <header className="w-full flex gap-4 items-center mb-8">
-          <button onClick={toggleProjectsModal}>
+          <Link to={"/"}>
             <span className="flex items-center gap-1 cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +84,7 @@ function ProjectsModal({
               </svg>
               <p className="text-xs lg:text-sm font-normal">Back</p>
             </span>
-          </button>
+          </Link>
           <h2 className="text-2xl font-bold">All Projects</h2>
         </header>
 
