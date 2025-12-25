@@ -1,3 +1,16 @@
+// ./pages
+export type HomeProp = {
+  theme: boolean;
+  copyrightNote: string;
+  toggleTheme: () => void;
+};
+
+export type ProjectsModalProp = {
+  theme: boolean;
+  copyrightNote: string;
+};
+
+// ../components
 export type ProfileProp = {
   img: string;
 };
@@ -10,7 +23,6 @@ export type AboutProp = {
 
 export type ProjectsProp = {
   section: string;
-  toggleProjectsModal: () => void;
 };
 
 export type ServicesProp = {
@@ -22,10 +34,5 @@ export type TechstackProp = ServicesProp;
 export type EducationProp = ServicesProp;
 
 export type CopyrightProp = {
-  copyrightNote: string;
-};
-
-export type ProjectsModalProp = {
-  toggleProjectsModal: () => void;
   copyrightNote: string;
 };
