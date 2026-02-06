@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import projectsData from "../data.json";
 import type { ProjectsModalProp } from "../types/proptypes";
@@ -6,15 +5,6 @@ import type { ProjectsModalProp } from "../types/proptypes";
 function ProjectsModal({ theme, copyrightNote }: ProjectsModalProp) {
   // Create a copy of array from projectsData.json (slice), then reverse it to show the latest added project first
   const allProjects = projectsData.allprojects.slice().reverse();
-
-  //Pre-load each project.image so it will display instantly once ProjectsModal gets opened
-  useEffect(() => {
-    allProjects.forEach((project) => {
-      const projectImage = new Image();
-
-      projectImage.src = project.image;
-    });
-  }, []);
 
   const projectCard = allProjects.map((project) => {
     return (
