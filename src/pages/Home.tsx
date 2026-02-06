@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import type { HomeProp } from "../types/proptypes";
 import Profile from "../components/Profile";
 import About from "../components/About";
@@ -8,20 +7,10 @@ import Services from "../components/Services";
 import Education from "../components/Education";
 import Techstack from "../components/Techstack";
 import Copyright from "../components/Copyright";
-import profilePic from "../assets/images/image-profile.png";
-import profilePicDark from "../assets/images/image-profile-dark.png";
+import profilePic from "../assets/images/image-profile.webp";
+import profilePicDark from "../assets/images/image-profile-dark.webp";
 
 function Home({ theme, copyrightNote, toggleTheme }: HomeProp) {
-  //Profile Component
-  //Apply useEffect to render images on first mount to prevent re-render when setting new image on new theme
-  useEffect(() => {
-    const imgLightBg = new Image();
-    const imgDarkBg = new Image();
-
-    imgLightBg.src = profilePic;
-    imgDarkBg.src = profilePicDark;
-  }, []);
-
   return (
     <main
       className={`${
