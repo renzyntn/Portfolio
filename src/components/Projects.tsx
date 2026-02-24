@@ -14,20 +14,20 @@ function Projects({ section }: ProjectsProp) {
         key={project.id}
       >
         <h3 className="text-base font-medium">{project.title}</h3>
-        <p className="text-xs font-normal">{project.shortdescription}</p>
+        <p className="text-xs">{project.shortdescription}</p>
         <a
           className="w-full md:w-15 h-7 md:h-6 flex justify-center items-center py-1 bg-light-button dark:bg-dark-button dark:text-dark-font/80 rounded-sm"
           href={project.link}
           target={"_blank"}
         >
-          <span className="text-[0.5rem] font-semibold">View</span>
+          <p className="text-xs">View</p>
         </a>
       </article>
     );
   });
 
   return (
-    <div className="max-w-2xs md:max-w-full h-auto md:min-h-66 flex flex-col justify-center items-center space-y-3 md:space-y-2 p-4 bg-light-bg border-light-border/15 text-light-font border-2 rounded-lg font-geist dark:bg-dark-card dark:border-dark-border/15 dark:text-dark-font/80 animate-fade-in">
+    <div className="w-full md:max-w-full h-auto md:min-h-66 flex flex-col justify-center items-center space-y-3 md:space-y-2 p-4 bg-light-bg border-light-border/15 text-light-font border-2 rounded-lg font-geist dark:bg-dark-card dark:border-dark-border/15 dark:text-dark-font/80 animate-fade-in">
       <header className="w-full flex justify-between items-center">
         <div className="flex justify-center items-center gap-1.5">
           <svg
