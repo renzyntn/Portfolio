@@ -29,7 +29,7 @@ function App() {
     <Router>
       <Routes>
         <Route
-          index
+          path="/"
           element={
             <Home
               theme={theme}
