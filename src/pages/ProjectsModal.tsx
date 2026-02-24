@@ -50,9 +50,9 @@ function ProjectsModal({ theme, copyrightNote }: ProjectsModalProp) {
     <section
       className={`${
         theme ? "dark" : ""
-      } flex min-h-screen justify-center items-center mx-auto bg-light-bg dark:bg-dark-bg`}
+      } flex min-h-screen bg-light-bg dark:bg-dark-bg`}
     >
-      <div className="max-w-full h-full flex flex-col justify-between items-center pt-8 px-8 md:px-10 xl:px-20 font-geist text-light-font dark:text-dark-font/80 overflow-auto">
+      <div className="max-w-full h-full flex flex-col justify-between items-center p-6 md:px-10 xl:px-20 font-geist text-light-font dark:text-dark-font/80 overflow-auto">
         <header className="w-full flex gap-4 items-center mb-8">
           <Link to={"/"}>
             <span className="flex items-center gap-1 cursor-pointer">
