@@ -3,7 +3,7 @@ import type { ProfileProp } from "../types/proptypes";
 
 function Profile({ img }: ProfileProp) {
   return (
-    <div className="max-w-2xs md:max-w-full h-auto md:min-h-[23.25rem] flex flex-col justify-center items-center space-y-3 md:space-y-2 p-4 bg-light-bg border-light-border/20 border-2 dark:bg-dark-card dark:border-dark-border/15 rounded-lg font-geist animate-fade-in">
+    <div className="w-full md:max-w-full h-auto md:min-h-[23.25rem] flex flex-col justify-center items-center space-y-3 md:space-y-2 p-4 bg-light-bg border-light-border/20 border-2 dark:bg-dark-card dark:border-dark-border/15 rounded-lg font-geist animate-fade-in">
       <div className="size-50 flex justify-center items-center border-light-border/20 dark:border-dark-border/20 border-2 rounded-full overflow-hidden">
         <img src={img} alt={profileData.profile.alt} />
       </div>
