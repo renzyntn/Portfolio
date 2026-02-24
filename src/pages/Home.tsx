@@ -15,9 +15,9 @@ function Home({ theme, copyrightNote, toggleTheme }: HomeProp) {
     <main
       className={`${
         theme ? "dark" : ""
-      } min-h-screen flex justify-center items-center bg-light-bg dark:bg-dark-bg`}
+      } min-h-screen bg-light-bg dark:bg-dark-bg`}
     >
-      <section className="h-full w-auto max-w-[57rem] grid grid-cols-1 md:grid-cols-6 justify-center items-center px-3 py-8 sm:p-8 gap-2 md:gap-1 overflow-auto">
+      <section className="h-full w-auto max-w-[57rem] mx-auto grid grid-cols-1 md:grid-cols-6 justify-center items-center p-6 sm:p-8 gap-1 overflow-auto">
         <div className="md:col-span-2 md:col-start-1 md:row-span-2 md:row-start-1 md:row-end-3">
           <Profile img={theme ? profilePicDark : profilePic} />
         </div>
