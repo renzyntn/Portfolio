@@ -82,7 +82,7 @@ function ProjectsModal({ theme, copyrightNote }: ProjectsModalProp) {
           {projectCard}
         </div>
 
-        <footer className="w-full max-w-screen py-6 text-center mt-8 border-t border-light-border/30 dark:border-dark-border/30">
+        <footer className="w-full py-6 text-center mt-8 border-t border-light-border/30 dark:border-dark-border/30">
           <div className="flex justify-center items-center">
             <p className="text-sm font-normal">{copyrightNote}</p>
           </div>
