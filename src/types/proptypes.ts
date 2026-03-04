@@ -42,6 +42,10 @@ export type MainLayoutProp = {
   isChat: boolean;
   setIsChat: React.Dispatch<React.SetStateAction<boolean>>;
   toggleChat: () => void;
+  chatHistory: ChatType[];
+  setChatHistory: React.Dispatch<React.SetStateAction<ChatType[]>>;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export type ChatButtonProp = {
@@ -53,4 +57,13 @@ export type ChatButtonProp = {
 export type ChatPaneProp = {
   theme: boolean;
   setIsChat: React.Dispatch<React.SetStateAction<boolean>>;
+  chatHistory: ChatType[];
+  setChatHistory: React.Dispatch<React.SetStateAction<ChatType[]>>;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export type ChatType = {
+  role: "ai" | "user";
+  content: string;
 };
