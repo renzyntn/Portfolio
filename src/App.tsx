@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import type { ChatType } from "./types/proptypes";
 import Home from "./pages/Home";
 import ProjectsModal from "./pages/ProjectsModal";
 import MainLayout from "./layouts/MainLayout";
@@ -13,6 +14,10 @@ function App() {
       ? JSON.parse(checkPastTheme) //If true, set the theme saved from localStorage
       : window.matchMedia("(prefers-color-scheme: dark)").matches; // If false, then set the theme depending on OS theme
   });
+
+  //ChatPane Component
+  const [chatHistory, setChatHistory] = useState<ChatType[]>([]); // Declare chatHistory state as empty array
+  const [isLoading, setIsLoading] = useState(false); // Declare isLoading state as false
 
   //Copyright Component
   const currentYear = new Date().getFullYear(); //Get latest year to display in copyright paragraph
@@ -42,6 +47,10 @@ function App() {
               isChat={isChat}
               setIsChat={setIsChat}
               toggleChat={toggleChat}
+              chatHistory={chatHistory}
+              setChatHistory={setChatHistory}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
             />
           }
         >
