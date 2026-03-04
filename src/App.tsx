@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import type { ChatType } from "./types/proptypes";
 import Home from "./pages/Home";
 import ProjectsModal from "./pages/ProjectsModal";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   //About Component
@@ -13,9 +15,15 @@ function App() {
       : window.matchMedia("(prefers-color-scheme: dark)").matches; // If false, then set the theme depending on OS theme
   });
 
+  //ChatPane Component
+  const [chatHistory, setChatHistory] = useState<ChatType[]>([]); // Declare chatHistory state as empty array
+  const [isLoading, setIsLoading] = useState(false); // Declare isLoading state as false
+
   //Copyright Component
   const currentYear = new Date().getFullYear(); //Get latest year to display in copyright paragraph
   const copyrightNote = `© ${currentYear} Renzy Antonio, All rights reserved.`;
+
+  const [isChat, setIsChat] = useState(false);
 
   function toggleTheme() {
     setTheme((prevTheme) => {
@@ -25,25 +33,44 @@ function App() {
     });
   }
 
+  function toggleChat() {
+    setIsChat(true);
+  }
+
   return (
     <Router>
       <Routes>
         <Route
-          path="/"
           element={
-            <Home
+            <MainLayout
               theme={theme}
-              copyrightNote={copyrightNote}
-              toggleTheme={toggleTheme}
+              isChat={isChat}
+              setIsChat={setIsChat}
+              toggleChat={toggleChat}
+              chatHistory={chatHistory}
+              setChatHistory={setChatHistory}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
             />
           }
-        />
-        <Route
-          path="/projects"
-          element={
-            <ProjectsModal theme={theme} copyrightNote={copyrightNote} />
-          }
-        />
+        >
+          <Route
+            index
+            element={
+              <Home
+                theme={theme}
+                copyrightNote={copyrightNote}
+                toggleTheme={toggleTheme}
+              />
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <ProjectsModal theme={theme} copyrightNote={copyrightNote} />
+            }
+          />
+        </Route>
       </Routes>
     </Router>
   );

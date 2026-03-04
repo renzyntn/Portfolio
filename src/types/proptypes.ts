@@ -36,3 +36,34 @@ export type EducationProp = ServicesProp;
 export type CopyrightProp = {
   copyrightNote: string;
 };
+
+export type MainLayoutProp = {
+  theme: boolean;
+  isChat: boolean;
+  setIsChat: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleChat: () => void;
+  chatHistory: ChatType[];
+  setChatHistory: React.Dispatch<React.SetStateAction<ChatType[]>>;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export type ChatButtonProp = {
+  theme: boolean;
+  isChat: boolean;
+  toggleChat: () => void;
+};
+
+export type ChatPaneProp = {
+  theme: boolean;
+  setIsChat: React.Dispatch<React.SetStateAction<boolean>>;
+  chatHistory: ChatType[];
+  setChatHistory: React.Dispatch<React.SetStateAction<ChatType[]>>;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export type ChatType = {
+  role: "ai" | "user";
+  content: string;
+};
