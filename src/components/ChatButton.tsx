@@ -1,6 +1,8 @@
 import type { ChatButtonProp } from "../types/proptypes";
+import { useToggleStore } from "../store/useToggleStore";
 
-function ChatButton({ theme, isChat, toggleChat }: ChatButtonProp) {
+function ChatButton({ theme }: ChatButtonProp) {
+  const { isChat, toggleChat } = useToggleStore();
   return (
     <button
       className={`fixed p-4 bottom-6 right-6 sm:bottom-8 sm:right-8 rounded-lg bg-dark-bg dark:bg-light-bg text-dark-font dark:text-light-font cursor-pointer ${theme ? "dark" : ""}`}
