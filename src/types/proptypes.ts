@@ -53,16 +53,16 @@ export type ChatType = {
   role: "ai" | "user";
   content: string;
 };
-export interface ChatState {
+export type ChatState = {
   chatHistory: ChatType[];
   setChatHistory: (newChatObj: ChatType) => void;
-}
-export interface ToggleState {
+};
+export type ToggleState = {
   isChat: boolean;
   setIsChat: (newVal: boolean) => void;
   toggleChat: () => void;
-}
-export interface LoadingState {
+};
+export type LoadingState = {
   isLoading: boolean;
   setIsLoading: (newVal: boolean) => void;
-}
+};
