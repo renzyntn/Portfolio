@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import type { ChatType } from "./types/proptypes";
 import Home from "./pages/Home";
 import ProjectsModal from "./pages/ProjectsModal";
 import MainLayout from "./layouts/MainLayout";
@@ -15,15 +14,9 @@ function App() {
       : window.matchMedia("(prefers-color-scheme: dark)").matches; // If false, then set the theme depending on OS theme
   });
 
-  //ChatPane Component
-  const [chatHistory, setChatHistory] = useState<ChatType[]>([]); // Declare chatHistory state as empty array
-  const [isLoading, setIsLoading] = useState(false); // Declare isLoading state as false
-
   //Copyright Component
   const currentYear = new Date().getFullYear(); //Get latest year to display in copyright paragraph
   const copyrightNote = `© ${currentYear} Renzy Antonio, All rights reserved.`;
-
-  const [isChat, setIsChat] = useState(false);
 
   function toggleTheme() {
     setTheme((prevTheme) => {
@@ -33,27 +26,10 @@ function App() {
     });
   }
 
-  function toggleChat() {
-    setIsChat(true);
-  }
-
   return (
     <Router>
       <Routes>
-        <Route
-          element={
-            <MainLayout
-              theme={theme}
-              isChat={isChat}
-              setIsChat={setIsChat}
-              toggleChat={toggleChat}
-              chatHistory={chatHistory}
-              setChatHistory={setChatHistory}
-              isLoading={isLoading}
-              setIsLoading={setIsLoading}
-            />
-          }
-        >
+        <Route element={<MainLayout theme={theme} />}>
           <Route
             index
             element={

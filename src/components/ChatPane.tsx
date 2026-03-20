@@ -1,17 +1,20 @@
 import { useRef, useEffect } from "react";
+import { useChatStore } from "../store/useChatStore";
+import { useToggleStore } from "../store/useToggleStore";
+import { useLoadingStore } from "../store/useLoadingStore";
 import type { ChatPaneProp } from "../types/proptypes";
 import profilePic from "../assets/images/image-profile.webp";
 import profilePicDark from "../assets/images/image-profile-dark.webp";
 import MessageLoading from "./Loading/MessageLoading";
 
-function ChatPane({
-  theme,
-  setIsChat,
-  chatHistory,
-  setChatHistory,
-  isLoading,
-  setIsLoading,
-}: ChatPaneProp) {
+function ChatPane({ theme }: ChatPaneProp) {
+  // import and destructure state objects from 'useChatStore'
+  const { chatHistory, setChatHistory } = useChatStore();
+  // import and destructure state objects from 'useLoadingStore'
+  const { isLoading, setIsLoading } = useLoadingStore();
+  // import and destructure state objects from 'useToggleStore'
+  const { setIsChat } = useToggleStore();
+
   const inputRef = useRef<HTMLInputElement | null>(null); // Declare inputRef as null (this will hold the value typed by users in input tag)
   const chatBubbleRef = useRef<HTMLDivElement | null>(null); // Declare chatBubbleRef as null (this will hold the div container of chat-bubble div)
   const imgIcon = theme ? profilePicDark : profilePic; // Declare imgIcon boolean based on theme value
@@ -56,21 +59,15 @@ function ChatPane({
       const aiResponse = data.choices[0].message.content;
 
       // add/push the 'aiResponse' as a new object in chatHistory state '{role: "ai", content: aiResponse}'
-      setChatHistory((prevResponse) => [
-        ...prevResponse,
-        { role: "ai", content: aiResponse },
-      ]);
+      setChatHistory({ role: "ai", content: aiResponse });
     } catch (err) {
       console.log("Fetch error: ", err);
       // add/push a catch error 'aiResponse' if an error occurs
-      setChatHistory((prevResponse) => [
-        ...prevResponse,
-        {
-          role: "ai",
-          content:
-            "Sorry, I'm having trouble connecting right now. Please try again later.",
-        },
-      ]);
+      setChatHistory({
+        role: "ai",
+        content:
+          "Sorry, I'm having trouble connecting right now. Please try again later.",
+      });
     } finally {
       // Finally, set the isLoading state to false again to remove the Loading display in ChatPane
       setIsLoading(false);
@@ -96,10 +93,7 @@ function ChatPane({
     }
 
     // add/push the 'userMessage' as a new object in chatHistory state '{role: "user", content: userMessage}'
-    setChatHistory((prevChat) => [
-      ...prevChat,
-      { role: "user", content: userMessage },
-    ]);
+    setChatHistory({ role: "user", content: userMessage });
 
     // Set 'userMessage' as the fetchResponse argument
     fetchResponse(userMessage);
