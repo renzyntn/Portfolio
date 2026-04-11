@@ -23,10 +23,10 @@ function Services({ section }: ServicesProp) {
       <div className="w-full flex justify-start items-center md:leading-relaxed grow">
         <ul className="flex flex-col text-base gap-2 lg:gap-4">
           <li>Frontend Web Development</li>
+          <li>Custom Web Development</li>
           <li>Responsive Web Design</li>
-          <li>Mobile-first Approach</li>
-          <li>UI/UX Design</li>
           <li>SEO Optimization</li>
+          <li>UI/UX Design</li>
         </ul>
       </div>
     </div>
