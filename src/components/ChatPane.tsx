@@ -43,7 +43,7 @@ function ChatPane({ theme }: ChatPaneProp) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "arcee-ai/trinity-large-preview:free",
+          model: `${import.meta.env.VITE_OPENROUTER_MODEL}`,
           messages: [
             {
               role: "system",
